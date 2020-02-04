@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application title="Clicnat - OURSIN" mouseposition="false" logo="img/logo/logo_oursin_blanc.png" help="mviewer_help.html" measuretools="true" exportpng="true" coordinates="false" style="css/themes/green_clicnat.css" togglealllayersfromtheme="true"/>
+    <mapoptions maxzoom="19" projection="EPSG:3857" center="326292,6407945" zoom="8" projextent="-20037508.342789244, -20037508.342789244, 20037508.342789244, 20037508.342789244" />
+  
+    <baselayers style="gallery"><!-- style="default"||gallery" -->
+        <!--<baselayer  type="fake" id="fake" label="Carroyage" title="Carroyage" thumbgallery="img/basemap/grid.png" visible="false"  />-->
+        <baselayer  type="OSM" id="positron" label="Positron" title="CartoDb" thumbgallery="img/basemap/positron.png" 
+            url="http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" maxzoom="20" 
+            visible="false" attribution="Map tiles by  &lt;a href='http://cartodb.com/attributions'>CartoDb &lt;/a>, under  &lt;a href='http://creativecommons.org/licenses/by/3.0/'>CC BY 3.0 &lt;/a>" />
+        <baselayer  type="OSM" id="osm1" label="OpenStreetMap" title="OpenStreetMap" thumbgallery="img/basemap/osm.png" 
+            url="http://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
+            attribution="© OpenStreetMap. Données : les contributeurs d'&lt;a href='http://www.openstreetmap.org/' target='_blank'>OpenStreetMap &lt;/a>,  &lt;a href='http://www.openstreetmap.org/copyright' target='_blank'>ODbL &lt;/a>" 
+            visible="false"/>
+        <baselayer  type="WMS" id="osm_naturaliste" label="OpenStreetMap - Naturaliste" title="OpenStreetMap - Naturaliste" thumbgallery="img/basemap/osm.png" 
+            url="https://osm.geo2france.fr/mapproxy/service?SERVICE=WMS" layers="naturaliste" format="image/png"
+            attribution="© Geo2France et Picardie Nature. Données : les contributeurs d'&lt;a href='http://www.openstreetmap.org/' target='_blank'>OpenStreetMap &lt;/a>,  &lt;a href='http://www.openstreetmap.org/copyright' target='_blank'>ODbL &lt;/a>" 
+            visible="true"/>
+        <baselayer  type="WMS" id="ortho_regionale_2018_rvb" label="Orthophoto HR 2018" title="Orthophoto" thumbgallery="img/basemap/ortho.jpg" 
+            url="https://www.geo2france.fr/geoserver/geo2france/ows" 
+            attribution="IGN, Geo2France" layers="ortho_regionale_2018_rvb" format="image/jpeg" visible="false"/>
+        <baselayer  type="WMS" id="scan25" label="IGN Scan25" title="Scan25" thumbgallery="img/basemap/scan25.png" 
+            url="https://www.geopicardie.fr/geoserver/geopicardie/ows" 
+            attribution="IGN, Geo2France" layers="picardie_scan25" format="image/jpeg" visible="false"/>
+    </baselayers>     
+    <proxy url=""/>
+    <olscompletion url="https://api-adresse.data.gouv.fr/search/" type="ban"/>
+    <searchparameters bbox="false" localities="true" features="false" />   
+
+    <themes> 
+        <theme name="Observatoire de la faune"  collapsed="false" visible="true" id="clicnat" icon="fas fa-binoculars">
+           <layer 
+                id="stat_clicnat_commune" name="Biodiversité communale" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" queryable="true" infoformat="application/vnd.ogc.gml"
+                attributefilter="true" attributelabel="Taxon" attributefield="taxon" attributevalues="Arachnides,Mammifères,Oiseaux,Insectes" attributefilterenabled="true" visible="true" expanded="true"
+            >
+                <template>
+                        <![CDATA[ 
+                            {{#features}}
+                                <h2>{{area_name}} [<span id="code_dep"></span>]</h2>
+                                <h3>{{taxon}}</h3>
+                               <li>Espèces connues :  <span class="badge badge-big">{{n_sp}}</span></li> <br><br>
+                                <a href=http://clicnat.fr/commune/{{area_code}} target='_blank'><u>Plus d'information sur clicnat.fr</u></a>
+
+                            
+                                <style>
+                                    .badge-big{
+                                        font-size:150%;
+                                    }
+                                </style>
+
+                                <script>
+                                    $("#toto").text('texte dans scripts');
+                                    $("#code_dep").text('{{area_code}}'.substring(0,2));
+                                </script>
+                            {{/features}}
+                        ]]>
+
+                </template>
+            </layer>
+        </theme>
+
+        <theme name="Atlas"  collapsed="true" id="atlas" icon="fas fa-table">
+
+    		<layer id='temporal_atlas' name="Atlas passereaux" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
+                filter="id_atlas=9" >
+                <template   url="templates/temporal_atlas_generic.mst" />
+  	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas micro-mammifères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
+                filter="id_atlas=12" >
+                <template   url="templates/temporal_atlas_generic.mst" />
+  	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas macro-mammifères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
+                filter="id_atlas=13" >
+                <template   url="templates/temporal_atlas_generic.mst" />
+  	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas chiroptères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
+                filter="id_atlas=2" >
+                <template   url="templates/temporal_atlas_generic.mst" />
+  	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas coccinelles" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                filter="id_atlas=3" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas amphibiens" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                filter="id_atlas=11" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas reptiles" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                filter="id_atlas=8" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas syrphes" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                filter="id_atlas=7" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas orthoptères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                filter="id_atlas=5" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas odonates" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                filter="id_atlas=10" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>
+
+
+    		<!--<layer id='temporal_atlas' name="Atlas papillons" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                filter="id_atlas=4" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>-->
+
+		</theme>         
+       <theme name="Zonage et outils"  collapsed="true" id="zonage" icon="fa fa-vector-square">
+            <layer id='znieff1' url="https://www.geo2france.fr/geoserver/picardie_nature/ows" visible="False" name="Znieff1" queryable="true" infoformat="application/vnd.ogc.gml">
+                </layer>
+            <layer id='l93_5X5' url="https://www.geo2france.fr/geoserver/picardie_nature/ows" visible="False" name="Grille 5x5" queryable="true" opacity="0.5" infoformat="application/vnd.ogc.gml">
+             </layer>
+            <layer id='ocs_hdf_2009_2010' url="https://www.geo2france.fr/geoserver/hdf_common/ows" visible="False" name="Occupation du sol" 
+                metadata="https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/7fac6bc0-9db8-4247-993c-ba2404387bbf" 
+                attribution="Région Haut-de-France, Geo2France" 
+                legendurl="img/legend/legend_ocs_simplifiee.png"
+                queryable="true" opacity="0.9" infoformat="application/vnd.ogc.gml">
+             </layer>
+        </theme>
+
+    </themes>
+</config>
