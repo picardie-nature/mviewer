@@ -62,71 +62,77 @@
         <theme name="Atlas"  collapsed="true" id="atlas" icon="fas fa-table">
 
     		<layer id='temporal_atlas' name="Atlas passereaux" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
                 filter="id_atlas=9" >
                 <template   url="templates/temporal_atlas_generic.mst" />
   	        </layer>
 
     		<layer id='temporal_atlas' name="Atlas micro-mammifères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"
                 filter="id_atlas=12" >
                 <template   url="templates/temporal_atlas_generic.mst" />
   	        </layer>
 
     		<layer id='temporal_atlas' name="Atlas macro-mammifères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"
                 filter="id_atlas=13" >
                 <template   url="templates/temporal_atlas_generic.mst" />
   	        </layer>
 
     		<layer id='temporal_atlas' name="Atlas chiroptères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019" 
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020" 
                 filter="id_atlas=2" >
                 <template   url="templates/temporal_atlas_generic.mst" />
   	        </layer>
 
-    		<layer id='temporal_atlas' name="Atlas coccinelles" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
-                filter="id_atlas=3" >
-                 <template   url="templates/temporal_atlas_generic.mst" />
-	        </layer>
-
     		<layer id='temporal_atlas' name="Atlas amphibiens" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"
                 filter="id_atlas=11" >
                  <template   url="templates/temporal_atlas_generic.mst" />
 	        </layer>
 
     		<layer id='temporal_atlas' name="Atlas reptiles" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"
                 filter="id_atlas=8" >
                  <template   url="templates/temporal_atlas_generic.mst" />
 	        </layer>
 
-    		<layer id='temporal_atlas' name="Atlas syrphes" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
-                filter="id_atlas=7" >
+    		<layer id='temporal_atlas' name="Atlas bourdons" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"
+                filter="code_atlas='BOURD'" >
                  <template   url="templates/temporal_atlas_generic.mst" />
 	        </layer>
 
+    		<layer id='temporal_atlas' name="Atlas coccinelles" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"
+                filter="id_atlas=3" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>
+
+
     		<layer id='atlas_orthopteres' name="Atlas orthoptères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2000-01-01" timemax="2019-01-01" expanded="true" attribution="Nombre d'espèces connues" timevalues="2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" attribution="Nombre d'espèces connues" timevalues="2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020"
                 >
                  <template   url="templates/temporal_atlas_generic.mst" />
 	        </layer>
 
     		<layer id='temporal_atlas' name="Atlas odonates" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"
                 filter="id_atlas=10" >
                  <template   url="templates/temporal_atlas_generic.mst" />
 	        </layer>
 
-
-    		<!--<layer id='temporal_atlas' name="Atlas papillons" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
-                filter="id_atlas=4" >
+	        <layer id='temporal_atlas' name="Atlas papillons de jour" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"
+                filter="code_atlas='PAPJ'" >
                  <template   url="templates/temporal_atlas_generic.mst" />
-	        </layer>-->
+	        </layer>
+
+    		<layer id='temporal_atlas' name="Atlas syrphes" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
+                filter="id_atlas=7" >
+                 <template   url="templates/temporal_atlas_generic.mst" />
+	        </layer>
 
 		</theme>         
        <theme name="Zonage et outils"  collapsed="true" id="zonage" icon="fa fa-vector-square">
