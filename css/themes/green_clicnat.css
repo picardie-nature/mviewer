@@ -342,6 +342,14 @@ body .popover-title {
 #help .tab-pane .visuel {
   text-align: center; }
 
+#help .partner-logo {
+    width:100px;
+    margin-left:50px;
+}
+
+#help a {
+    text-decoration: underline;
+}
 /*******************************
 -------------LOADER INDICATOR
 ********************************/

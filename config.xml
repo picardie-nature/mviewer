@@ -109,9 +109,9 @@
                  <template   url="templates/temporal_atlas_generic.mst" />
 	        </layer>
 
-    		<layer id='temporal_atlas' name="Atlas orthoptères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2009-01-01" timemax="2019-01-01" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019"
-                filter="id_atlas=5" >
+    		<layer id='atlas_orthopteres' name="Atlas orthoptères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" timemin="2000-01-01" timemax="2019-01-01" expanded="true" attribution="Nombre d'espèces connues" timevalues="2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020"
+                >
                  <template   url="templates/temporal_atlas_generic.mst" />
 	        </layer>
 
