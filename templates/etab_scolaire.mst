@@ -1,0 +1,80 @@
+{{#features}}
+    <h4>{{area_name}} ({{area_code}}) </h4>
+    <li>Nombre d'espèces connues : <span class="badge badge-big">{{n_especes}}</span> <hr /> </li>
+    <canvas id="myChart"></canvas>
+    <span class="sp_list" id='data_espece_FvJhMcixwI_{{id_area}}'></span>
+    <script>
+        var data_espece={{{detail_especes}}};
+        data_espece.sort(function(a,b){
+                return a.nom_vern > b.nom_vern;
+            });
+        var html_list_sp='';
+        data_espece.forEach(function(item){
+           if(item){ 
+                html_list_sp+='<li>- '+
+                                '<a href=https://clicnat.fr/espece/'+item.cd_nom.toString()+' target=_blank>'+
+                                   (item.nom_vern || '') +
+                                   ' (<i>'+item.lb_nom+'</i>)'+
+                                '</a>'+
+                             '</li>';
+                 };
+            });
+        $('#data_espece_FvJhMcixwI_{{id_area}}').html(html_list_sp);
+
+
+        //Chart
+    $.get('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js', function() {
+
+            var getLabelsAndFrequences = function (obj, scheme) {
+                var data = {values: [], labels:[]};
+                obj.forEach(function(item){
+                    console.log(item[scheme]);
+                    var position = data.labels.indexOf(item[scheme]);
+                    if(position < 0){
+                        data.labels.push(item[scheme]);
+                        data.values.push(1);
+                    }else{
+                        data.values[position]=data.values[position]+1
+                    }; 
+                })
+                return data;
+            };
+
+            var pie_data = getLabelsAndFrequences(data_espece, "group2inpn") ;
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+
+            // The data for our dataset
+            data: {
+                labels: pie_data.labels,
+                datasets: [{
+                    label: 'Nombre d\'espèces',
+                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                    borderColor: 'rgb(255, 255, 255)',
+                    data: pie_data.values
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                legend:{ display : false }
+            }
+        });
+    });
+    </script>
+{{/features}}
+                            
+<style>
+    .badge-big{
+        font-size:150%;
+    }
+    .sp_list{
+        overflow: scroll; 
+        height:40% ; 
+        display:block;
+        list-style-type:square;
+    }
+</style>
