@@ -73,12 +73,14 @@
   	        </layer>
 
     		<layer id='atlas_micrommam_hdf' name="Atlas micro-mammifères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020" >
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020" attribution="G.O.N, Picardie-Nature, CMNF" 
+                metadata="https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/6ea5c1bd-b10b-4f7e-9139-2f878c63fc74">
                 <template   url="templates/temporal_atlas_generic.mst" />
   	        </layer>
 
     		<layer id='atlas_macrommam_hdf' name="Atlas macro-mammifères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020">
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020" attribution="G.O.N, Picardie-Nature, CMNF"
+                metadata="https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/6ea5c1bd-b10b-4f7e-9139-2f878c63fc74">
                 <template   url="templates/temporal_atlas_generic.mst" />
   	        </layer>
 
