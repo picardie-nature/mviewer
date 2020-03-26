@@ -62,6 +62,11 @@
              <template   url="templates/etab_scolaire.mst" />
             </layer>
 
+           <layer 
+                id="echouage" name="Signalements de mammifères marins échoués" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" queryable="true" infoformat="application/vnd.ogc.gml" attribution="Réseau National Echouage, Picardie Nature" legendurl="img/legend/legende_echouage.png">
+             <template   url="templates/echouage.mst" />
+            </layer>
+
         </theme>
 
         <theme name="Atlas"  collapsed="true" id="atlas" icon="fas fa-table">
