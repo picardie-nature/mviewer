@@ -15,7 +15,7 @@
     var formated_date = raw_date.getDate()+'/'+('0'+(raw_date.getMonth()+1)).slice(-2)+'/'+raw_date.getFullYear();
     var label_classe={
         'mort':'danger',
-        'vivant':'success',
+        'posé':'success',
         'échoué vivant': 'warning'};
     
     $('#observation_date{{unique_id_sinp}}').html(formated_date);
