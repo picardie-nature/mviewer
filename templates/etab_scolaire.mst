@@ -1,6 +1,8 @@
 {{#features}}
     <h4>{{area_name}} ({{area_code}}) </h4>
-    <li>Nombre d'espèces connues : <span class="badge badge-big">{{n_especes}}</span> <hr /> </li>
+    <li>Nombre d'espèces connues : <span class="badge badge-big">{{n_especes}}</span> </li>
+    <li><a style="text-decoration: underline" href="https://clicnat.fr/territoire/{{area_code}}">Plus d'informations sur clicnat.fr</a></li>
+    <hr /> 
     <canvas id="myChart"></canvas>
     <span class="sp_list" id='data_espece_FvJhMcixwI_{{id_area}}'></span>
     <script>
