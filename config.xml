@@ -68,6 +68,15 @@
              <template   url="templates/echouage.mst" />
             </layer>
 
+           <layer 
+                id="tracking" name="Suivis individuels" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" queryable="true" 
+             infoformat="application/vnd.ogc.gml" featurecount="10" expanded="true" 
+            attributefilterenabled="true" attributefilter="true" attributefield="id_indiv" 
+                attributevalues="5,2,3,4,6,7,8" attributelabel="Individu"
+            >
+              <template   url="templates/tracking.mst" />
+            </layer>
+
         </theme>
 
         <theme name="Atlas"  collapsed="true" id="atlas" icon="fas fa-table">
@@ -90,9 +99,8 @@
                 <template   url="templates/temporal_atlas_generic.mst" />
   	        </layer>
 
-    		<layer id='temporal_atlas' name="Atlas chiroptères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
-                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" legendurl="img/legend/temporal_atlas.png" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020" 
-                filter="id_atlas=2" >
+    		<layer id='atlas_chiro' name="Atlas chiroptères" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" infoformat="application/vnd.ogc.gml"  queryable="true" opacity="0.9"
+                timefilter="true" timeinterval="year" timecontrol="slider" expanded="true" timevalues="2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020"  >
                 <template   url="templates/temporal_atlas_generic.mst" />
   	        </layer>
 
