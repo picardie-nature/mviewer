@@ -165,6 +165,10 @@
                 legendurl="img/legend/legend_ocs_simplifiee.png"
                 queryable="true" opacity="0.9" infoformat="application/vnd.ogc.gml">
              </layer>
+            <layer id='rpg_2017_parcelles_hdf' url="https://www.geo2france.fr/geoserver/cr_hdf/ows" visible="False" name="Registre Parcellaire Graphique (RPG) 2017" 
+                metadata="https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/4e510f8c-7a18-4fd1-a523-517cc52ae8a3" attribution="IGN-F, Geo2France" 
+                queryable="true" opacity="0.9" infoformat="application/vnd.ogc.gml">
+            </layer>
         </theme>
 
     </themes>
