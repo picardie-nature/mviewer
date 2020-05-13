@@ -31,7 +31,7 @@
         <theme name="Observatoire de la faune"  collapsed="false" visible="true" id="clicnat" icon="fas fa-binoculars">
            <layer 
                 id="stat_clicnat_commune" name="Biodiversité communale" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" queryable="true" infoformat="application/vnd.ogc.gml"
-                attributefilter="true" attributelabel="Taxon" attributefield="taxon" attributevalues="Arachnides,Mammifères,Oiseaux,Insectes" attributefilterenabled="true" visible="true" expanded="true"
+                attributefilter="true" attributelabel="Taxon" attributefield="taxon" attributevalues="Amphibiens et reptiles,Araignées,Insectes,Mammifères,Mollusques,Oiseaux,Poissons" attributefilterenabled="true" visible="true" expanded="true"
             >
                 <template>
                         <![CDATA[ 
@@ -60,6 +60,13 @@
            <layer 
                 id="clicnat_edu" name="Etablissements scolaires et aires éducatives" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" queryable="true" infoformat="application/vnd.ogc.gml" legendurl="/">
              <template   url="templates/etab_scolaire.mst" />
+            </layer>
+
+           <layer 
+                id="biodiv_epci" name="Biodiversité des EPCI" url="https://www.geo2france.fr/geoserver/picardie_nature/ows" queryable="true" infoformat="application/vnd.ogc.gml" legendurl="/"
+                style="biodiv_epci,biodiv_epci_mammif,biodiv_epci_amphib_rept,biodiv_epci_oiseaux,biodiv_epci_insectes,biodiv_epci_araignee,biodiv_epci" stylesalias="Tout,Mammifères,Amphibiens et Reptiles,Oiseaux,Insectes,Araignées,Tout"   expanded="true"  opacity="0.8"
+            >
+              <template   url="templates/biodiv_territoire.mst" />
             </layer>
 
            <layer 

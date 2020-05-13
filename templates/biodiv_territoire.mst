@@ -1,0 +1,69 @@
+{{#features}}
+    <h4>{{area_name}} ({{area_code}}) </h4>
+    <li>Nombre d'espèces connues : <span class="badge badge-big">{{n_total_espece}}</span> </li>
+    <li><a style="text-decoration: underline" href="https://clicnat.fr/territoire/{{area_code}}">Plus d'informations sur clicnat.fr</a></li>
+    <hr /> 
+    <canvas id="myChartBiodivTerritoire258"></canvas>
+    <span class="sp_list" id='data_espece_FvJhMcixwI_{{id_area}}'></span>
+    <script>
+        var data_biodiv = {
+            values : [ {{n_amphib_reptil}}, {{n_araignee}} ,{{n_insecte}} , {{n_mammif}} , {{n_mollusque}}, {{n_oiseau}}, {{n_poisson}} ],
+            labels: [ 'Amphibiens et Reptiles', 'Araignées', 'Insectes',     'Mammifères',   'Mollusques' ,    'Oiseaux',      'Poissons' ]
+        };
+        console.log(data_biodiv);
+        //Chart
+        $.get('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js', function() {
+
+           /* var getLabelsAndFrequences = function (obj, scheme) {
+                var data = {values: [], labels:[]};
+                obj.forEach(function(item){
+                    console.log(item[scheme]);
+                    var position = data.labels.indexOf(item[scheme]);
+                    if(position < 0){
+                        data.labels.push(item[scheme]);
+                        data.values.push(1);
+                    }else{
+                        data.values[position]=data.values[position]+1
+                    }; 
+                })
+                return data;
+            };*/
+
+            var pie_data = data_biodiv ;
+
+            var ctx = document.getElementById('myChartBiodivTerritoire258').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'doughnut',
+
+            // The data for our dataset
+            data: {
+                labels: pie_data.labels,
+                datasets: [{
+                    label: 'Nombre d\'espèces',
+                    backgroundColor: ["#4cd195", "#f1f58c","#92baed","#adf7b8","#f18e8e","#ffbb00","#cc0066","#cccc00"],
+                    borderColor: 'rgb(255, 255, 255)',
+                    data: pie_data.values
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                legend:{ display : false }
+            }
+        });
+    });
+    </script>
+{{/features}}
+                            
+<style>
+    .badge-big{
+        font-size:150%;
+    }
+    .sp_list{
+        overflow: scroll; 
+        height:40% ; 
+        display:block;
+        list-style-type:square;
+    }
+</style>
