@@ -176,6 +176,11 @@
                 metadata="https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/4e510f8c-7a18-4fd1-a523-517cc52ae8a3" attribution="IGN-F, Geo2France" 
                 queryable="true" opacity="0.9" infoformat="application/vnd.ogc.gml">
             </layer>
+
+            <layer id='secteur_prospection_lepido' url="https://www.geo2france.fr/geoserver/picardie_nature/ows" visible="False" name="Secteur de prospections lépido" 
+                attribution="RPG, Geo2France" 
+                queryable="true" opacity="0.9" infoformat="application/vnd.ogc.gml">
+            </layer>
         </theme>
 
     </themes>
